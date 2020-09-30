@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "user":{
+      "type": "object",
+      "title": "User",
+      "required": [
+        "user_id",
+        "name",
+        "display_name"
+      ],
+      "properties": {
+        "user_id": {
+          "description": "id of the user",
+          "title": "user_id",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of User",
+          "title": "Name",
+          "type": "string"
+        },
+        "display_name": {
+          "description": "Display Name of User",
+          "title": "Display Name",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "organization":{
+    "type": "object",
+    "title": "Organization",
+    "required": [
+      "organization_id",
+      "name",
+      "display_name"
+    ],
+    "properties": {
+      "organization_id": {
+        "description": "id of the organization",
+        "title": "organization_id",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of Org",
+        "title": "Name",
+        "type": "string"
+      },
+      "display_name": {
+        "description": "Display Name of Org",
+        "title": "Display Name",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  },
+  "portfolio":{
+    "type": "object",
+    "title": "Portfolio",
+    "required": [
+      "portfolio_id",
+      "name"
+    ],
+    "properties": {
+      "organization_id": {
+        "description": "id of the portfolio",
+        "title": "portfolio_id",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of portfolio",
+        "title": "Name",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  },
+  "role":{
+    "type": "object",
+    "title": "Role",
+    "required": [
+      "role_id",
+      "name"
+    ],
+    "properties": {
+      "role_id": {
+        "description": "id of the role",
+        "title": "role_id",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of role",
+        "title": "Name",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  },
+  "permission":{
+    "type": "object",
+    "title": "Permission",
+    "required": [
+      "permission_id",
+      "name"
+    ],
+    "properties": {
+      "permission_id": {
+        "description": "id of the permission",
+        "title": "permission_id",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of permission",
+        "title": "Name",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  }
+}

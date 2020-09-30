@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "$ref": "#/definitions/User",
+  "definitions": {
+    "User": {
+      "type": "object",
+      "title": "The User schema",
+      "description": "The User schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object",
+          "title": "The meta schema",
+          "description": "User meta",
+          "required": [
+            "user_id",
+            "organization_id"
+          ],
+          "properties": {
+            "user_id": {
+              "type": "string",
+              "title": "The user_id",
+              "description": "user_id"
+            },
+            "organization_id": {
+              "type": "string",
+              "title": "The organization_id",
+              "description": "organization_id"
+            }
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "The User schema",
+          "description": "User Schema",
+          "additionalItems": true,
+          "required": [
+            "user_id",
+            "email",
+            "mobile_number",
+            "profile_pic",
+            "name",
+            "diaplay_name",
+            "status",
+            "roles",
+            "organization_units",
+            "created_at",
+            "updated_at",
+            "policy"
+          ],
+          "properties": {
+            "user_id": {
+              "type": "string",
+              "title": "user id",
+              "description": "user id"
+            },
+            "email": {
+              "type": "string",
+              "title": "The email schema",
+              "description": "An explanation about the purpose of this instance."            },
+            "mobile_number": {
+              "type": "string",
+              "title": "The mobile_number schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "profile_pic": {
+              "type": "string",
+              "title": "The profile_pic url",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "name": {
+              "type": "string",
+              "title": "The name schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "display_name": {
+              "type": "string",
+              "title": "The nickname schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "status": {
+              "type": "string",
+              "title": "The status schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "organization": {
+              "type": "object",
+              "title": "The organization schema",
+              "description": "An explanation about the purpose of this instance.",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "An explanation about the purpose of this instance."
+                },
+                "name": {
+                  "type": "string",
+                  "title": "The name schema",
+                  "description": "An explanation about the purpose of this instance."
+                },
+                "display_name": {
+                  "type": "string",
+                  "title": "The display_name schema",
+                  "description": "An explanation about the purpose of this instance."
+                }
+              }
+            },
+            "roles": {
+              "type": "array",
+              "title": "The roles schema",
+              "description": "An explanation about the purpose of this instance.",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                      "role_id",
+                      "name"
+                    ],
+                    "properties": {
+                      "role_id": {
+                        "type": "string",
+                        "title": "The id schema",
+                        "description": "An explanation about the purpose of this instance."
+                      },
+                      "name": {
+                        "type": "string",
+                        "title": "The name schema",
+                        "description": "An explanation about the purpose of this instance."
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "organization_units": {
+              "type": "array",
+              "title": "The organization_units schema",
+              "description": "An explanation about the purpose of this instance.",
+              "additionalItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                      "org_unit_id",
+                      "name"
+                    ],
+                    "properties": {
+                      "org_unit_id": {
+                        "type": "string",
+                        "title": "The id schema",
+                        "description": "An explanation about the purpose of this instance."
+                      },
+                      "name": {
+                        "type": "string",
+                        "title": "The name schema",
+                        "description": "An explanation about the purpose of this instance."
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "created_at": {
+              "type": "string",
+              "title": "The created_at schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "updated_at": {
+              "type": "string",
+              "title": "The updated_at schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "policy": {
+              "$id": "#/properties/data/items/anyOf/0/properties/policy",
+              "type": "null",
+              "title": "The policy schema",
+              "description": "An explanation about the purpose of this instance."
+            }
+          }
+        }
+      }
+    }
+  }
+}

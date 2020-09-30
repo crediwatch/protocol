@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/Role",
+  "definitions": {
+    "Role": {
+      "type": "object",
+      "title": "The Information List schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of Information data for a party",
+      "properties": {
+        "meta": {
+          "description": "Meta of Role",
+          "type": "object",
+          "required": [
+            "role_id",
+            "organization_id"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "title": "The data schema",
+          "description": "An explanation about the purpose of this instance.",
+          "required": [
+            "role_id",
+            "name",
+            "status",
+            "organization",
+            "created_at",
+            "updated_at",
+            "user_count",
+            "policies"
+          ],
+          "properties": {
+            "role_id": {
+              "type": "string",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "name": {
+              "type": "string",
+              "title": "The name schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "status": {
+              "type": "string",
+              "title": "The status schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "organization": {
+              "type": "object",
+              "title": "Organization",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "description": "id of the organization",
+                  "title": "organization_id",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "Name of Org",
+                  "title": "Name",
+                  "type": "string"
+                },
+                "display_name": {
+                  "description": "Display Name of Org",
+                  "title": "Display Name",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "created_at": {
+              "type": "string",
+              "title": "The created_at schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "updated_at": {
+              "type": "string",
+              "title": "The updated_at schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "user_count": {
+              "type": "integer",
+              "title": "The user_count schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "policies": {
+              "type": "array",
+              "title": "The policies schema",
+              "description": "An explanation about the purpose of this instance.",
+              "additionalItems": true,
+              "items": {
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "$id": "#/properties/data/properties/policies/items/anyOf/0/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "5ef45f24f6859736ac63da64"
+                    ]
+                  },
+                  "name": {
+                    "$id": "#/properties/data/properties/policies/items/anyOf/0/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "portfolio-viewer-policy"
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}
